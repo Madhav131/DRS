@@ -1,0 +1,324 @@
+<View
+  style={{
+    borderWidth: 0.3,
+    borderColor: Colors.gray,
+    borderRadius: 50,
+  }}>
+  <Picker
+    selectedValue={selected_shop}
+    style="#000"
+    onValueChange={val => setSelectedShop(val)}>
+    <Picker.Item label="General" value={''} />
+    {shopList.map((item, index) => {
+      return <Picker.Item label={item.name} value={index} />;
+    })}
+  </Picker>
+</View>;
+
+{
+  selected_shop === '' || selected_shop === undefined ? (
+    homeData !== '' || homeData !== undefined ? (
+      <View>
+        {get_role === 4 ? null : (
+          <View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginTop: '5%',
+                marginHorizontal: '8%',
+              }}>
+              {shopList && shopList.length > 0
+                ? shopList.map((item, index) => {
+                    return (
+                      <View style={{}}>
+                        <View style={{}}>
+                          <Text
+                            style={{
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: 'bold',
+                            }}>
+                            {item.name}
+                          </Text>
+                          <View
+                            style={{
+                              width: '100%',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              backgroundColor: Colors.sky,
+                              height: metrics.HEIGHT * 0.13,
+                              borderRadius: 5,
+                              padding: '1%',
+                            }}>
+                            <Text style={styles.heading}>
+                              {item.todays_income}
+                            </Text>
+                            <Text style={styles.label}>Today Income</Text>
+                          </View>
+                        </View>
+                      </View>
+                    );
+                  })
+                : null}
+            </View>
+
+            <Text
+              style={{
+                fontSize: 18,
+                color: Colors.black,
+                marginTop: '5%',
+                fontWeight: 'bold',
+              }}>
+              Income Details
+            </Text>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'flex-start',
+                justifyContent: 'space-between',
+                marginTop: '5%',
+              }}>
+              {/* <View style={styles.container} >
+                                                <Text style={styles.heading} >{homeData.all_income}</Text>
+                                                <Text style={styles.label} >All Income</Text>
+                                            </View> */}
+
+              <View style={styles.container}>
+                <Text style={styles.heading}>{homeData.todays_income}</Text>
+                <Text style={styles.label}>Today Income</Text>
+              </View>
+
+              <View style={styles.container}>
+                <Text style={styles.heading}>{homeData.month_income}</Text>
+                <Text style={styles.label}>Monthly Income</Text>
+              </View>
+              <View
+                style={{
+                  width: '30%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  backgroundColor: Colors.white,
+                  height: metrics.HEIGHT * 0.13,
+                  borderRadius: 5,
+                  padding: '1%',
+                }}></View>
+              {/* <View style={styles.container}>
+                        <Text style={styles.heading}>
+                          {homeData.week_income}
+                        </Text>
+                        <Text style={styles.label}>Weekly Income</Text>
+                      </View> */}
+            </View>
+
+            {/* <View
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'flex-start',
+                        justifyContent: 'space-between',
+                        marginTop: '5%',
+                      }}>
+                      <View style={styles.container}>
+                        <Text style={styles.heading}>
+                          {homeData.month_income}
+                        </Text>
+                        <Text style={styles.label}>Monthly Income</Text>
+                      </View>
+
+                      <View style={styles.container}>
+                        <Text style={styles.heading}>
+                          {homeData.year_income}
+                        </Text>
+                        <Text style={styles.label}>Yearly Income</Text>
+                      </View>
+
+                      <View style={{width: '30%'}} />
+                    </View> */}
+          </View>
+        )}
+        <Text
+          style={{
+            fontSize: 18,
+            color: Colors.black,
+            marginTop: '5%',
+            fontWeight: 'bold',
+          }}>
+          Order Details
+        </Text>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            marginTop: '5%',
+          }}>
+          <View style={styles.container}>
+            <Text style={styles.heading}>{homeData.all_orders}</Text>
+            <Text style={styles.label}>All Orders</Text>
+          </View>
+
+          <View style={styles.container}>
+            <Text style={styles.heading}>{homeData.todays_orders}</Text>
+            <Text style={styles.label}>Today Orders</Text>
+          </View>
+
+          <View style={styles.container}>
+            <Text style={styles.heading}>{homeData.week_orders}</Text>
+            <Text style={styles.label}>Weekly Orders</Text>
+          </View>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            marginTop: '5%',
+          }}>
+          <View style={styles.container}>
+            <Text style={styles.heading}>{homeData.month_orders}</Text>
+            <Text style={styles.label}>Monthly Orders</Text>
+          </View>
+
+          <View style={styles.container}>
+            <Text style={styles.heading}>{homeData.year_orders}</Text>
+            <Text style={styles.label}>Yearly Orders</Text>
+          </View>
+
+          <View style={{width: '30%'}} />
+        </View>
+      </View>
+    ) : null
+  ) : shopList.length > 0 ? (
+    <View>
+      {get_role === 4 ? null : (
+        <>
+          <Text
+            style={{
+              fontSize: 18,
+              color: Colors.black,
+              marginTop: '5%',
+              fontWeight: 'bold',
+            }}>
+            Income Details
+          </Text>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+              marginTop: '5%',
+            }}>
+            <View style={styles.container}>
+              <Text style={styles.heading}>
+                {shopList[selected_shop].all_income}
+              </Text>
+              <Text style={styles.label}>All Income</Text>
+            </View>
+
+            <View style={styles.container}>
+              <Text style={styles.heading}>
+                {shopList[selected_shop].todays_income}
+              </Text>
+              <Text style={styles.label}>Today Income</Text>
+            </View>
+
+            <View style={styles.container}>
+              <Text style={styles.heading}>
+                {shopList[selected_shop].week_income}
+              </Text>
+              <Text style={styles.label}>Weekly Income</Text>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'flex-start',
+              justifyContent: 'space-between',
+              marginTop: '5%',
+            }}>
+            <View style={styles.container}>
+              <Text style={styles.heading}>
+                {shopList[selected_shop].month_income}
+              </Text>
+              <Text style={styles.label}>Monthly Income</Text>
+            </View>
+
+            <View style={styles.container}>
+              <Text style={styles.heading}>
+                {shopList[selected_shop].year_income}
+              </Text>
+              <Text style={styles.label}>Yearly Income</Text>
+            </View>
+
+            <View style={{width: '30%'}} />
+          </View>
+        </>
+      )}
+
+      <Text
+        style={{
+          fontSize: 18,
+          color: Colors.black,
+          marginTop: '5%',
+          fontWeight: 'bold',
+        }}>
+        Order Details
+      </Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          marginTop: '5%',
+        }}>
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            {shopList[selected_shop].all_orders}
+          </Text>
+          <Text style={styles.label}>All Orders</Text>
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            {shopList[selected_shop].todays_orders}
+          </Text>
+          <Text style={styles.label}>Today Orders</Text>
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            {shopList[selected_shop].week_orders}
+          </Text>
+          <Text style={styles.label}>Weekly Orders</Text>
+        </View>
+      </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          marginTop: '5%',
+        }}>
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            {shopList[selected_shop].month_orders}
+          </Text>
+          <Text style={styles.label}>Monthly Orders</Text>
+        </View>
+
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            {shopList[selected_shop].year_orders}
+          </Text>
+          <Text style={styles.label}>Yearly Orders</Text>
+        </View>
+
+        <View style={{width: '30%'}} />
+      </View>
+    </View>
+  ) : null;
+}

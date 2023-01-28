@@ -1,0 +1,125 @@
+ <View
+                    style={{
+                      backgroundColor: Colors.white,
+                      height: metrics.HEIGHT * 0.12,
+                      width: "90%",
+                      marginHorizontal: "5%",
+                      elevation: 3,
+                      borderRadius: 10,
+                      marginTop: "3%",
+                    }}
+                  >
+                    <View style={{flexDirection: 'row'}}>
+                      <View style={{ marginTop: "5%", marginHorizontal: "5%" }}>
+                        <Text
+                          style={{
+                            fontSize: 16,
+                            // alignSelf: "center",
+                            color: Colors.black,
+                          }}
+                        >
+                          Product Name: {item.pname}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: 16,
+                            // alignSelf: "center",
+                            color: Colors.black,
+                          }}
+                        >
+                          Product Qty: {item.pqty}
+                        </Text>
+                        <Text
+                          style={{
+                            fontSize: 16,
+                            // alignSelf: "center",
+                            color: Colors.black,
+                          }}
+                        >
+                          Product Price: {item.pprice}
+                        </Text>
+                      </View>
+                      
+                    </View>
+                    {/* <View
+                      style={{
+                        flexDirection: "row",
+                        marginTop: "2%",
+                        marginHorizontal: "5%",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          alignSelf: "center",
+                          color: Colors.black,
+                        }}
+                      >
+                        Product Name:
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: Colors.black,
+                          alignSelf: "center",
+                          marginLeft: "4%",
+                        }}
+                      >
+                        {item.pname}
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        marginTop: "2%",
+                        marginHorizontal: "5%",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          alignSelf: "center",
+                          color: Colors.black,
+                        }}
+                      >
+                        Product Qty:
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: Colors.black,
+                          alignSelf: "center",
+                          marginLeft: "4%",
+                        }}
+                      >
+                        {item.pqty}
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        flexDirection: "row",
+                        marginTop: "2%",
+                        marginHorizontal: "5%",
+                      }}
+                    >
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          alignSelf: "center",
+                          color: Colors.black,
+                        }}
+                      >
+                        Product Price:
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: Colors.black,
+                          alignSelf: "center",
+                          marginLeft: "4%",
+                        }}
+                      >
+                        {item.pprice}
+                      </Text>
+                    </View> */}
+                  </View>
